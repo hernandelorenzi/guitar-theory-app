@@ -84,6 +84,12 @@
   padding: 16px;
 }
 
+#tools-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+}
+
 #options-container {
   background: var(--bg-panel);
   border: 1px solid var(--border);

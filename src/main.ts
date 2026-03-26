@@ -1,6 +1,7 @@
 import './styles/base.css'
 import './styles/layout.css'
 import './styles/controls.css'
+import './styles/tools.css'
 
 import { state, setState, subscribe } from './state'
 import { CHORDS, getInversionFormula } from './theory/chords'
@@ -10,6 +11,8 @@ import { solve } from './fretboard/solver'
 import { createFretboardSVG, renderNotes } from './ui/fretboard-svg'
 import { renderFormulaView } from './ui/formula-view'
 import { buildControls, buildOptions } from './ui/controls'
+import { buildMetronome } from './ui/metronome'
+import { buildTuner } from './ui/tuner'
 import { renderColorEditor } from './ui/color-editor'
 import type { IntervalDegree } from './theory/intervals'
 
@@ -81,6 +84,11 @@ function render(): void {
 // ── Subscribe and initial render ──────────────────────────────────────────────
 subscribe(render)
 render()
+
+// ── Tools (metronome + tuner) ─────────────────────────────────────────────────
+const toolsWrap = document.getElementById('tools-container')!
+buildMetronome(toolsWrap)
+buildTuner(toolsWrap)
 
 // ── Keyboard shortcuts ────────────────────────────────────────────────────────
 document.addEventListener('keydown', (e) => {
