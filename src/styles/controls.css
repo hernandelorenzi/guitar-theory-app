@@ -1,0 +1,186 @@
+/* ── Sections ───────────────────────────────────────────────────────────────── */
+.ctrl-section {
+  padding: 10px 14px;
+  border-bottom: 1px solid var(--border);
+}
+.ctrl-section:last-child { border-bottom: none; }
+
+.ctrl-section-title {
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: #b0b0cc;
+  margin-bottom: 8px;
+}
+
+/* ── Buttons ────────────────────────────────────────────────────────────────── */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  border: 1px solid var(--border);
+  background: var(--bg-raised);
+  color: #c0c0d8;
+  border-radius: var(--radius-sm);
+  font-family: var(--font-ui);
+  font-size: 12px;
+  padding: 4px 8px;
+  transition: background 120ms, color 120ms, border-color 120ms;
+  white-space: nowrap;
+}
+.btn:hover {
+  background: var(--bg-hover);
+  color: var(--text-primary);
+  border-color: var(--border-active);
+}
+.btn.active {
+  background: var(--accent-soft);
+  color: var(--accent-hover);
+  border-color: var(--accent);
+  font-weight: 600;
+}
+.btn-ghost {
+  background: transparent;
+  border-color: transparent;
+  color: #b0b0cc;
+  font-size: 11px;
+}
+.btn-ghost:hover { color: var(--danger); background: transparent; }
+.btn-sm { padding: 3px 6px; font-size: 11px; }
+
+/* ── Note grid ───────────────────────────────────────────────────────────────── */
+.note-grid {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  gap: 3px;
+}
+.note-btn {
+  padding: 4px 2px;
+  font-size: 11px;
+  font-weight: 500;
+}
+
+/* ── Toggle group ────────────────────────────────────────────────────────────── */
+.toggle-group {
+  display: flex;
+  gap: 4px;
+  flex-wrap: nowrap;
+}
+.toggle-group.wrap { flex-wrap: wrap; }
+.toggle-btn { flex: 1; }
+
+/* ── Chord groups ────────────────────────────────────────────────────────────── */
+.chord-group { margin-bottom: 8px; }
+.group-label {
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  color: var(--accent);
+  text-transform: uppercase;
+  margin-bottom: 4px;
+}
+.chord-btn-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 3px;
+}
+.chord-btn {
+  font-size: 11px;
+  padding: 3px 7px;
+}
+
+/* ── Checkbox option ─────────────────────────────────────────────────────────── */
+.check-option {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  cursor: pointer;
+  color: var(--text-secondary);
+  font-size: 12px;
+  padding: 2px 0;
+}
+.check-option input[type=checkbox] {
+  accent-color: var(--accent);
+  width: 13px;
+  height: 13px;
+}
+.check-option:hover { color: var(--text-primary); }
+
+/* ── Color editor ────────────────────────────────────────────────────────────── */
+.color-editor-title {
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: #b0b0cc;
+  margin-bottom: 10px;
+}
+.color-editor-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px 14px;
+  margin-bottom: 10px;
+}
+.color-item {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  cursor: pointer;
+}
+.color-swatch {
+  width: 26px;
+  height: 26px;
+  border: 1px solid var(--border-active);
+  border-radius: 4px;
+  cursor: pointer;
+  padding: 1px;
+  background: var(--bg-raised);
+}
+.color-label {
+  font-size: 11px;
+  font-family: var(--font-mono);
+  color: var(--text-secondary);
+}
+
+/* ── Formula view ────────────────────────────────────────────────────────────── */
+.formula-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  align-items: flex-start;
+}
+.formula-pill {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+  background: var(--bg-raised);
+  border: 1px solid var(--border);
+  border-top: 3px solid var(--pill-color, #4A9EBF);
+  border-radius: var(--radius);
+  padding: 10px 14px 8px;
+  min-width: 56px;
+  transition: border-color 200ms;
+}
+.formula-degree {
+  font-family: var(--font-mono);
+  font-size: 15px;
+  font-weight: 700;
+  color: var(--pill-color, #4A9EBF);
+}
+.formula-note {
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--text-primary);
+}
+
+/* ── Note dot animation ───────────────────────────────────────────────────────── */
+.note-dot {
+  animation: dot-in 180ms ease both;
+}
+@keyframes dot-in {
+  from { opacity: 0; transform: scale(0.6); }
+  to   { opacity: 1; transform: scale(1); }
+}
